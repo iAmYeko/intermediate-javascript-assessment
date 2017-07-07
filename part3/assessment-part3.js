@@ -13,7 +13,16 @@
 // return the result of your updateAnimal invocation
 
 // CODE HERE...
-
+function callBinding(magicAnimals, updateAnimal, id) {
+  var result = {};
+  for (var i = 0; i < magicAnimals.length; i++) {
+    if (magicAnimals[i].id === id) {
+      magicAnimals[i].name = 'Trogdor';
+      result = updateAnimal.call(magicAnimals[i]);
+    }
+  }
+  return result;
+}
 
 
 // *************
